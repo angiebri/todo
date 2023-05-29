@@ -2,6 +2,7 @@ import React from 'react'
 import { BsCheck } from 'react-icons/bs'
 import cn from 'classnames'
 
+// нужно придерживаться одинаковых отступов во всем приложении
 const Check = ({ isCompleted }) => {
 	return (
 		<div

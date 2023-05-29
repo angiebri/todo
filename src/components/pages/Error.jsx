@@ -1,5 +1,6 @@
 import React from 'react'
 
+// тут бы оформить ее посимпатичней и добавить 404
 const Error = () => {
     return (
         <div>

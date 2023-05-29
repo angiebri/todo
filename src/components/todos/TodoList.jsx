@@ -7,7 +7,8 @@ import Button from '../Items/Button'
 import { Link } from 'react-router-dom'
 
 
-
+// тут, кстати, очень крутая возможность сохранять это с помощью useStorage хуком
+// https://usehooks.com/useLocalStorage/
 const TodoList = (props) => {
 	const [todos, setTodos] = useState(data)
 
@@ -32,7 +33,16 @@ const TodoList = (props) => {
 	}
 
 	function editTodo(todo) {
+    // если мы попадаем под условие, то дальше мы в любом случае не идем
+    // поэтому можно сделать так
+    // if (t.id === todo.id) return todo
+    // return t
+    // или 
+    // return t.id === todo.id ? todo : t
+    // то есть будет выглядеть так
+    // setTodos(prev => prev.map(el => el.id === todo.id ? todo : el))
 		setTodos(todos.map((t) => {
+
 			if (t.id === todo.id) {
 				return todo
 			} else {

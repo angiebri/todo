@@ -7,6 +7,7 @@ import Login from '../pages/Login'
 import Todolist from '../todos/TodoList'
 import Home from '../pages/Home'
 
+// закомментированный код лучше убирать
 const AppRouter = () => {
 
 	return (
@@ -18,7 +19,8 @@ const AppRouter = () => {
 				<Route path='/todolist' element={<Todolist />} />
 				<Route path='/login' element={<Login />} />
 				<Route path='*' element={<Error />} />
-				<Route path='*' element={<Navigate to='/todolist' replace />} />
+        {/* чтоб это заработало - нужно path='|' и поставить в самое начало */}
+				<Route path='/' element={<Navigate to='/todolist' replace />} />
 			</Routes>
 		</BrowserRouter>
 		/*:

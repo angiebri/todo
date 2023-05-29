@@ -4,6 +4,12 @@ import { MdAddBox } from 'react-icons/md'
 import { v4 as uuidv4 } from 'uuid'
 import Input from '../Items/Input'
 
+// функции, которые передаются через пропсы не следует называть через set, 
+// лучше назвать onAddTodo - передавать туда созданный todo, 
+// то есть onAddTodo({ id: uuidv4(), title, isCompleted: false })
+// А уже там, где вызывается компонент делать так
+// <CreateTodoField onAddTodo={(newTodo) => setTodos(prev => [ onAddTodo, ...todo ])} ... />
+// тут даже можно записать еще короче, если не добавлять useState для титлов, а брать прям из инпута
 const CreateTodoField = ({ setTodos }) => {
 
 	//1

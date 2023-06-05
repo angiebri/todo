@@ -6,31 +6,22 @@ import Error from '../pages/Error'
 import Login from '../pages/Login'
 import Todolist from '../todos/TodoList'
 import Home from '../pages/Home'
+import { Register } from '../pages/Register'
 
 const AppRouter = () => {
 
 	return (
-
 		<BrowserRouter>
 			<Routes>
 				<Route path='/todo' element={<Home />} />
-				<Route path='/about' element={<About />} />
-				<Route path='/todolist' element={<Todolist />} />
-				<Route path='/login' element={<Login />} />
+				<Route path='/todo/about' element={<About />} />
+				<Route path='/todo/todolist' element={<Todolist />} />
+				<Route path='/todo/login' element={<Login />} />
+				<Route path='/todo/singin' element={<Register />} />
 				<Route path='*' element={<Error />} />
-				<Route path='*' element={<Navigate to='/todolist' replace />} />
+				<Route path='*' element={<Navigate to='/todo/todolist' replace />} />
 			</Routes>
 		</BrowserRouter>
-		/*:
-		<BrowserRouter>
-			<Routes>
-				<Route path='/' element={<Home />} />
-				<Route path='/about' element={<About />} />
-				<Route path='/login' element={<Login />} />
-				<Route path='*' element={<Error />} />
-				<Route path='*' element={<Navigate to='/login' replace />} />
-			</Routes>
-		</BrowserRouter>*/
 	)
 }
 

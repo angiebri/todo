@@ -1,7 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import Button from '../Items/Button'
-import { MdExitToApp } from 'react-icons/md'
+import { Logout } from '../pages/Logout'
 
 const About = () => {
     return (
@@ -10,12 +8,7 @@ const About = () => {
             <h1 className='text-white '>
                 Это приложение создано в качестве обучения
             </h1>
-            <div className='flex items-center'>
-                <Link to='/todo'><Button icon={<MdExitToApp
-                    size={25}
-                    className='text-pink-400'
-                />} /></Link>
-            </div>
+            <Logout />
         </div>
     )
 }
